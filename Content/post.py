@@ -38,11 +38,28 @@ class Post(Topic):
         
     def add_comment(self, comment):
         ## Function to add a comment to a post
-        self.comments.append(comment)
+        
+        # error and exception handler - 2
+        try:
+            comment = str(comment)
+        except TypeError: 
+            print('TypeError occurred')
+        except:
+            print('Other error occurred')
+        else:
+            self.comments.append(comment)
         
     def add_like(self, num=1):
         # Function to add a like to a post
-        self.like += num
+        # error and exception handler - 3
+        try:
+            num = int(num)
+        except ValueError:
+            print('ValueError occurred')
+        except:
+            print('Other error occurred')
+        else:
+            self.like += num
         
     def check(self):
         """
@@ -105,8 +122,7 @@ class Post(Topic):
         if exist == 0:
             print('[No post with this keyword.]')
 
-            
-## Post objects stored
+# posts
 user1 = 'amethyst1016'
 post1 = Post(10, 'Winter break starts on December 23rd!', user1)
 post1.add_like(num=10)

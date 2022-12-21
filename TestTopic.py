@@ -30,3 +30,5 @@ class TestTopic(unittest.TestCase):
     @classmethod
     def tearDownClass(Topic):
         print('tear down Topic')
+
+unittest.main(argv=[''], verbosity=2, exit=False)

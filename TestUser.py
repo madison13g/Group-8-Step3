@@ -30,3 +30,5 @@ class TestUser(unittest.TestCase):
     @classmethod
     def tearDownClass(Post):
         print('tear down User')
+
+unittest.main(argv=[''], verbosity=2, exit=False)

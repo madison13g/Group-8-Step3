@@ -53,18 +53,19 @@ class Admin(User):
         ----------
         The string showing all users' id and username.
         """
-        for i in User.users:
-            print("Userid: {} Username: {}".format(i.id, i.user))
-
-
-# Creating database of admins
-
+        # error and exception handler - 6
+        try:
+            for i in User.users:
+                print("Userid: {} Username: {}".format(i.id, i.user))
+        except IndexError:
+            print('IndexError occurred')
+        except:
+            print('Other error occurred')
+            
+# administrators
 admin1 = Admin('Dan', 'password3', 'A1')
 admin2 = Admin('Amethyst', 'password4', 'A2')
 admin3 = Admin('Madison', 'password5', 'A3')
 admin4 = Admin('Abigail', 'password6', 'A4')
 admin5 = Admin('Linda', 'password7', 'A5')
 admin6 = Admin('Tom', 'password8', 'A6')
-
-
-
