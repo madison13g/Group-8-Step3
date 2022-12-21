@@ -1,3 +1,12 @@
+# user-defined exception
+class PasswordTooShort(Exception):
+    def __init__(self):
+        pass
+
+class PasswordTooLong(Exception):
+    def __init__(self):
+        pass
+
 class User():
     """
     Includes User definition and functions.
@@ -51,9 +60,22 @@ class User():
         return self._password
     @password.setter
     def password(self, value):
-        self._password = value
+        # error and exception handler - 5
+        try:
+            if len(value) < 6:
+                raise PasswordTooShort
+            elif len(value) > 12:
+                raise PasswordTooLong
+        except PasswordTooShort:
+            print('The password is too short')
+        except PasswordTooLong:
+            print('The password is too long')
+        except:
+            print('Other error occurred')
+        else:
+            self._password = value
 
-# Creating database of users
+# users
 user1 = User('madison13g', 'password1')
 user2 = User('amethyst1016', 'password2')
 user3 = User('khaladhasan', 'khalad1')
@@ -64,6 +86,3 @@ user7 = User('ifeomaadaji', 'ifeoma1')
 user8 = User('johnthompson', 'john1')
 user9 = User('emeliegustafsson', 'emelie1')
 user10 = User('patricialassere', 'patricia1')
-
-
-

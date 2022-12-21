@@ -35,7 +35,15 @@ class Topic:
         return self._tag
     @tag.setter
     def tag(self, tag):
-        self._tag = tag
+        # error and exception handler - 4
+        try:
+            tag = str(tag)
+        except TypeError:
+            print('TypeError occurred')
+        except:
+            print('Other error occurred')
+        else:
+            self._tag = tag
     
     def show(self):
         """
@@ -63,8 +71,7 @@ class Topic:
         if exist == 0:
             return('[No topic under this tag.]')
 
-            
-## Topic objects stored            
+# topics
 topic1 = Topic('DATA533 Collaborative Software Development', 'khaladhasan')
 topic1.tag = 'DATA533'
 topic2 = Topic('DATA571 Resampling and Regularization', 'jeffandrews')

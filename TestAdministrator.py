@@ -28,3 +28,5 @@ class TestAdmin(unittest.TestCase):
     @classmethod
     def tearDownClass(Post):
         print('tear down Admin')
+        
+unittest.main(argv=[''], verbosity=2, exit=False)
